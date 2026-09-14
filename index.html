@@ -30,7 +30,7 @@
     body {
       min-height: 100vh;
       overflow-x: hidden;
-      /* Applied the requested simple gradient background */
+      /* Simple top to bottom teal gradient */
       background: linear-gradient(to bottom, #00A3A3, #003D3D);
       background-attachment: fixed;
       color: var(--text);
@@ -42,15 +42,16 @@
       text-decoration: none;
     }
 
+    /* Scaled up container so content looks naturally larger at 100% zoom */
     .wrap {
-      width: min(880px, calc(100% - 32px));
+      width: min(1180px, calc(100% - 40px));
       margin: auto;
       position: relative;
     }
 
     /* Header */
     header {
-      padding: 24px 0;
+      padding: 32px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -59,71 +60,77 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 12px;
       font-weight: 800;
-      font-size: .95rem;
+      font-size: 1.15rem;
     }
 
     .brand-mark {
-      width: 28px;
-      height: 28px;
+      width: 36px;
+      height: 36px;
       display: grid;
       place-items: center;
-      border-radius: 8px;
+      border-radius: 10px;
       background: var(--accent);
       color: #001713;
-      font-size: .75rem;
+      font-size: .95rem;
       font-weight: 900;
     }
 
+    /* DM me cube button in top right */
     .top-link {
-      color: var(--text);
-      font-size: .8rem;
+      color: #ffffff;
+      font-size: .92rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      transition: .2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .top-link:hover {
+      background: #ffffff;
+      color: #003D3D;
+      transform: translateY(-2px);
     }
 
     /* Hero */
     .hero {
       text-align: center;
-      padding: 88px 0 82px;
+      padding: 60px 0 60px;
     }
 
+    /* Smaller, clean main slogan */
     .hero h1 {
-      max-width: 800px;
+      max-width: 850px;
       margin: auto;
-      font-size: clamp(2.5rem, 7vw, 4.5rem);
-      line-height: .96;
-      letter-spacing: -.05em;
-      font-weight: 900;
-    }
-
-    .hero h1 span {
-      color: var(--accent);
-    }
-
-    .hero p {
-      max-width: 540px;
-      margin: 22px auto 0;
-      color: var(--text);
-      font-size: 1rem;
-      line-height: 1.7;
+      font-size: clamp(1.6rem, 3.8vw, 2.4rem);
+      line-height: 1.25;
+      letter-spacing: -.02em;
+      font-weight: 800;
+      color: #ffffff;
     }
 
     .hero-actions {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin-top: 28px;
+      gap: 14px;
+      margin-top: 32px;
       flex-wrap: wrap;
     }
 
     .btn {
-      min-height: 44px;
-      padding: 0 16px;
+      min-height: 50px;
+      padding: 0 24px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 10px;
-      font-size: .83rem;
+      border-radius: 12px;
+      font-size: .95rem;
       font-weight: 800;
       transition: .2s ease;
     }
@@ -135,44 +142,46 @@
 
     .btn-main:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0,255,213,.16);
+      box-shadow: 0 10px 30px rgba(0,255,213,.25);
     }
 
     .btn-ghost {
-      border: 1px solid var(--line);
-      color: var(--text);
-      background: rgba(255,255,255,.03);
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      background: rgba(255,255,255,.05);
     }
 
     .btn-ghost:hover {
-      background: rgba(255,255,255,.07);
+      background: #ffffff;
+      color: #003D3D;
       transform: translateY(-2px);
     }
 
     /* Sections */
     section {
-      padding: 34px 0;
+      padding: 42px 0;
     }
 
     .section-head {
       display: flex;
       justify-content: space-between;
-      align-items: end;
-      margin-bottom: 14px;
+      align-items: flex-end;
+      margin-bottom: 18px;
       gap: 20px;
     }
 
     .section-head h2 {
-      font-size: 1.35rem;
-      letter-spacing: -.04em;
+      font-size: 1.65rem;
+      letter-spacing: -.03em;
     }
 
-    /* Videos */
+    /* Videos with White Border & Good Rounding */
     .featured {
-      border: 1px solid var(--line);
-      border-radius: 16px;
+      border: 2.5px solid #ffffff;
+      border-radius: 20px;
       overflow: hidden;
       background: var(--card);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     .featured iframe {
@@ -183,29 +192,30 @@
     }
 
     .featured-label {
-      padding: 12px 14px;
+      padding: 16px 20px;
       color: var(--text);
-      font-size: .75rem;
+      font-size: .9rem;
+      font-weight: 500;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+      gap: 20px;
     }
 
     .card {
-      border: 1px solid var(--line);
-      border-radius: 15px;
+      border: 2.5px solid #ffffff;
+      border-radius: 20px;
       overflow: hidden;
       background: var(--card);
       transition: .2s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      background: var(--card-hover);
-      border-color: rgba(0,255,213,.15);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
     }
 
     .card iframe {
@@ -218,20 +228,21 @@
     .shorts {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      gap: 16px;
     }
 
     .short {
       overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 14px;
+      border: 2.5px solid #ffffff;
+      border-radius: 20px;
       background: var(--card);
       transition: .2s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     }
 
     .short:hover {
-      transform: translateY(-3px);
-      border-color: rgba(0,255,213,.15);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
     }
 
     .short iframe {
@@ -244,95 +255,94 @@
     /* CTA */
     .cta {
       text-align: center;
-      padding: 85px 0 70px;
+      padding: 95px 0 80px;
     }
 
     .cta-box {
-      border: 1px solid rgba(0,255,213,.12);
-      border-radius: 18px;
+      border: 2.5px solid #ffffff;
+      border-radius: 22px;
       background: var(--card);
-      padding: 32px 20px;
+      padding: 40px 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     .cta h2 {
-      font-size: clamp(1.8rem, 5vw, 2.7rem);
-      line-height: 1.05;
-      letter-spacing: -.05em;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -.04em;
     }
 
     .cta p {
-      margin: 10px auto 22px;
-      max-width: 470px;
+      margin: 14px auto 26px;
+      max-width: 520px;
       color: var(--text);
-      font-size: .87rem;
+      font-size: 1rem;
       line-height: 1.6;
     }
 
     .socials {
       display: flex;
       justify-content: center;
-      gap: 9px;
+      gap: 12px;
     }
 
     .social {
-      width: 44px;
-      height: 44px;
+      width: 50px;
+      height: 50px;
       display: grid;
       place-items: center;
-      border-radius: 11px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
+      border-radius: 12px;
+      border: 1.5px solid #ffffff;
+      background: rgba(255,255,255,.08);
       transition: .2s ease;
     }
 
     .social:hover {
-      transform: translateY(-2px);
-      background: rgba(0,255,213,.10);
-      border-color: rgba(0,255,213,.18);
+      transform: translateY(-3px);
+      background: #ffffff;
+      color: #003D3D;
     }
 
     .social svg {
-      width: 18px;
-      height: 18px;
+      width: 22px;
+      height: 22px;
       fill: currentColor;
     }
 
     footer {
-      padding-bottom: 28px;
+      padding-bottom: 36px;
       text-align: center;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: .68rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: .8rem;
     }
 
-    @media (max-width: 700px) {
-      .hero {
-        padding: 68px 0 62px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 850px) {
       .shorts {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
+    @media (max-width: 700px) {
+      .hero {
+        padding: 50px 0 40px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 430px) {
       .wrap {
-        width: min(100% - 20px, 880px);
+        width: min(100% - 24px, 1180px);
       }
 
       .hero h1 {
-        font-size: clamp(2.4rem, 12vw, 3.5rem);
-      }
-
-      .hero p {
-        font-size: .92rem;
+        font-size: 1.5rem;
       }
 
       .cta {
-        padding: 70px 0 55px;
+        padding: 60px 0 45px;
       }
     }
 
@@ -344,7 +354,8 @@
       .btn,
       .card,
       .short,
-      .social {
+      .social,
+      .top-link {
         transition: none;
       }
     }
@@ -366,15 +377,10 @@
     <main>
 
       <section class="hero">
-        <!-- Replaced Main Slogan -->
+        <!-- Clean, exact slogan without extra text -->
         <h1>
-          I help creators make clean, clear, 
-          <span>easy-to-understand educational videos.</span>
+          I help creators make clean, clear, easy-to-understand educational videos.
         </h1>
-
-        <p>
-          Clean editing, strong pacing and visuals that help the idea — not distract from it.
-        </p>
 
         <div class="hero-actions">
           <a class="btn btn-main" href="#work">See my work</a>
@@ -385,7 +391,6 @@
       <section id="work">
         <div class="section-head">
           <h2>Showreel</h2>
-          <!-- Removed small text here -->
         </div>
 
         <div class="featured">
@@ -407,7 +412,6 @@
       <section>
         <div class="section-head">
           <h2>Long form</h2>
-          <!-- Removed small text here -->
         </div>
 
         <div class="grid">
@@ -421,7 +425,6 @@
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen>
             </iframe>
-            <!-- Removed the long form card text snippet here -->
           </article>
 
           <!-- Add more long-form cards here -->
@@ -432,7 +435,6 @@
       <section>
         <div class="section-head">
           <h2>Shorts</h2>
-           <!-- Removed small text here -->
         </div>
 
         <div class="shorts">
@@ -475,6 +477,7 @@
               </svg>
             </a>
 
+            <!-- Updated Official Instagram Icon -->
             <a
               class="social"
               href="https://www.instagram.com/im_tavvo"
@@ -483,7 +486,7 @@
               aria-label="Instagram">
 
               <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5Zm8.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-6 0 3 3 0 0 0 6 0Z"/>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
 
