@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tavvo – Video Editor</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(180deg, #008080 0%, #006666 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: white;
+      min-height: 100vh;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      border: 3px solid white;
+      font-size: 22px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      opacity: 0.9;
+      max-width: 480px;
+      margin: 0 auto 40px;
+      line-height: 1.5;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      margin: 50px 0 20px;
+      font-weight: 500;
+    }
+
+    /* Showreel */
+    .showreel {
+      max-width: 640px;
+      margin: 0 auto 20px;
+    }
+
+    .showreel a {
+      display: block;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .showreel img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Horizontal scroll rows */
+    .scroll-row {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 10px 5px 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .scroll-row::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .scroll-row::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.3);
+      border-radius: 10px;
+    }
+
+    .video-card {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      transition: transform 0.2s;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-card.short {
+      flex: 0 0 160px;
+    }
+
+    .video-card.short img {
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .video-title {
+      padding: 12px;
+      font-size: 0.9rem;
+      text-align: left;
+      background: #1a1a1a;
+    }
+
+    /* Contact */
+    .contact {
+      margin-top: 60px;
+      padding-bottom: 40px;
+    }
+
+    .contact p {
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .icons a {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .icons a:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 600px) {
+      .video-card {
+        flex: 0 0 240px;
+      }
+      .video-card.short {
+        flex: 0 0 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">Tavvo</div>
+
+  <h1>Hi, My name is Tavvo</h1>
+  <p class="tagline">"I help creators make clean, clear, easy-to-understand educational videos."</p>
+
+  <!-- Showreel -->
+  <div class="section-title">Showreel 👇</div>
+  <div class="showreel">
+    <a href="https://youtu.be/OhPzcrFEsrE" target="_blank">
+      <img src="https://img.youtube.com/vi/OhPzcrFEsrE/maxresdefault.jpg" alt="Showreel">
+    </a>
+  </div>
+
+  <!-- Long Form -->
+  <div class="section-title">Long Form Work</div>
+  <div class="scroll-row">
+    <a href="https://youtu.be/-N7h4qDFeHc" target="_blank" class="video-card">
+      <img src="https://img.youtube.com/vi/-N7h4qDFeHc/hqdefault.jpg" alt="Simulation Hypothesis">
+      <div class="video-title">Simulation Hypothesis</div>
+    </a>
+    <!-- You can add more long-form cards here later -->
+  </div>
+
+  <!-- Shorts -->
+  <div class="section-title">Short Samples</div>
+  <div class="scroll-row">
+    <a href="https://youtube.com/shorts/Bul4-VK8HPI" target="_blank" class="video-card short">
+      <img src="https://img.youtube.com/vi/Bul4-VK8HPI/hqdefault.jpg" alt="Empty Boat">
+    </a>
+    <!-- Add more short cards here later -->
+  </div>
+
+  <!-- Contact -->
+  <div class="contact">
+    <p>Click below to DM me 👇</p>
+    <div class="icons">
+      <a href="https://x.com/tavvoofficial" target="_blank" title="X">𝕏</a>
+      <a href="https://www.instagram.com/im_tavvo" target="_blank" title="Instagram">📷</a>
+      <a href="mailto:tavvoofficial@gmail.com" title="Email">✉️</a>
+      <a href="https://discord.com/users/1483449584855285810" target="_blank" title="Discord">💬</a>
+    </div>
+  </div>
+
+  <footer>© Tavvo. All rights reserved.</footer>
+
+</body>
+</html>
